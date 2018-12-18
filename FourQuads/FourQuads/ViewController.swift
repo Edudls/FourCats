@@ -23,7 +23,12 @@ class ViewController: UIViewController {
         self.setupCollectionView()
     }
     
-    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        // make sure that it reloads when the screen rotates so the images change size like they're supposed to
+        self.collectionView.reloadData()
+    }
     
 }
 
